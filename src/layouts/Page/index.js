@@ -52,7 +52,7 @@ const Page = (
         <h1>{ head.title }</h1>
       }
       { header }
-      <BodyContainer>{ body }</BodyContainer> // TODO use your own container
+      <BodyContainer>{ body }</BodyContainer> // TODO:0 use your own container issue:1
       { children }
       { footer }
     </div>
