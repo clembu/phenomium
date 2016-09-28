@@ -1,5 +1,6 @@
-#node
+# node / npm
 node_modules
+*.log
 
-#phenomic
+# phenomic build
 dist

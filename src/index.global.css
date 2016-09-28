@@ -56,14 +56,13 @@ body {
 }
 
 .phenomic-HeadingAnchor {
-  display: block;
+  display: inline-block;
   text-align: center;
   margin-left: calc(-1 * (var(--phenomic-HeadingAnchor-width) + var(--phenomic-HeadingAnchor-margin)));
   margin-right: var(--phenomic-HeadingAnchor-margin);
   width: var(--phenomic-HeadingAnchor-width);
   line-height: var(--phenomic-HeadingAnchor-width);
   text-decoration: none;
-
   opacity: 0.1;
   transition: opacity 0.2s;
 
@@ -75,4 +74,9 @@ body {
 /* minimal styling, prefer removing this and use local styles */
 a {
   color: #0e63e3;
+}
+
+/* handy for content */
+img {
+  max-width: 100%;
 }
