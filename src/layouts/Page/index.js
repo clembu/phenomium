@@ -42,17 +42,17 @@ const Page = (
   ]
 
   return (
-    <div className={ styles.page }>
+    <div className="page">
       <Helmet
         title={ metaTitle }
         meta={ meta }
       />
       {
         head.title &&
-        <h1 className={ styles.heading }>{ head.title }</h1>
+        <h1>{ head.title }</h1>
       }
       { header }
-      <BodyContainer>{ body }</BodyContainer>
+      <BodyContainer>{ body }</BodyContainer> // TODO use your own container
       { children }
       { footer }
     </div>
