@@ -1,17 +1,17 @@
 import React from "react"
 
-import styles from "./index.css"
+// import styles from "./index.css"
 
 const Footer = () => (
-  <footer className={ styles.footer }>
+  <footer className="footer">
     { /* If you like Phenomic, this is a way to share the love ;) */ }
     <p>
       <a
         href={ process.env.PHENOMIC_HOMEPAGE }
-        className={ styles.phenomicReference }
+        className="phenomicReference"
       >
         { "Website generated with " }
-        <span className={ styles.phenomicReferenceName }>
+        <span className="phenomicReferenceName">
           {  `<${ process.env.PHENOMIC_NAME} />` }
         </span>
       </a>
