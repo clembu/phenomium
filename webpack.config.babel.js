@@ -164,9 +164,10 @@ export default (config = {}) => {
             loader: [
               "css-loader",
               {
-                loader: "postcss-loader!sass-loader",
+                loader: "postcss-loader",
                 query: { "plugins": postcssPlugins },
               },
+              "sass-loader"
             ]
           }),
         },
@@ -199,7 +200,7 @@ export default (config = {}) => {
       ],
     },
     sassLoader: {
-      includePaths: [path.resolve(__dirname, "./node_modules")]
+      includePaths: [path.resolve(__dirname, "node_modules")]
     },
 
     // webpack 1
