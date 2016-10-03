@@ -158,15 +158,15 @@ export default (config = {}) => {
           // depending on your need, you might need to scope node_modules
           // for global CSS if you want to keep CSS Modules by default
           // for your own CSS. If so, uncomment the line below
-          // include: path.resolve(__dirname, "node_modules"),
-          loader: ExxtractTextPlugin.extract(
+          include: path.resolve(__dirname, "src"),
+          loader: ExtractTextPlugin.extract(
             "style-loader",
             [
               "css-loader",
-              {
-                loader: "postcss-loader",
-                query: { "plugins": postcssPlugins },
-              },
+              // {
+              //   loader: "postcss-loader",
+              //   query: { "plugins": postcssPlugins },
+              // },
               "sass-loader"
             ].join("!")
           ),
@@ -199,9 +199,12 @@ export default (config = {}) => {
         },
       ],
     },
-    sassLoader: {
-      includePaths: [path.resolve(__dirname, "node_modules")]
-    },
+    // sassLoader: {
+    //   includePaths: [
+    //     path.resolve(__dirname, "src"),
+    //     path.resolve(__dirname, "node_modules")
+    //   ]
+    // },
 
     // webpack 1
     postcss: postcssPlugins,
