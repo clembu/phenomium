@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   "/:collection",
   "/:collection/:item"
 ]

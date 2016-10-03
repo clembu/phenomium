@@ -8,6 +8,8 @@ import PhenomicLoaderFeedWebpackPlugin
 
 import pkg from "./package.json"
 
+import paths from "./config/paths"
+
 export default (config = {}) => {
   const postcssPlugins = () => [
     // require("stylelint")(),
@@ -50,9 +52,12 @@ export default (config = {}) => {
             context: path.join(__dirname, config.source),
             plugins: [
               ...require("phenomic/lib/loader-preset-default").default,
-              require("lib/path-to-metadata.js").default,
+              require("./lib/path-to-metadata").default,
               ...require("phenomic/lib/loader-preset-markdown").default
-            ]
+            ],
+            pathToMetadata: {
+              paths: paths
+            }
             // see https://phenomic.io/docs/usage/plugins/
           },
         },
