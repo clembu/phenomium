@@ -1,7 +1,7 @@
 import React, { PropTypes } from "react"
 
-// import "./index.global.scss"
-// import "./highlight.global.scss"
+import "./index.global.scss"
+import "./highlight.global.scss"
 
 import Container from "./components/Container"
 import DefaultHeadMeta from "./components/DefaultHeadMeta"
