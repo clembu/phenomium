@@ -78,77 +78,76 @@ export default (config = {}) => {
         // ! \\
         // by default *.css files are considered as CSS Modules
         // And *.global.css are considered as global (normal) CSS
-/*
+
         // *.css => CSS Modules
-        {
-          test: /\.css$/,
-          exclude: /\.global\.css$/,
-          include: path.resolve(__dirname, "src"),
-          // webpack 1
-          loader: ExtractTextPlugin.extract(
-            "style-loader",
-            [ `css-loader?modules&localIdentName=${
-              config.production
-              ? "[hash:base64:5]"
-              : "[path][name]--[local]--[hash:base64:5]"
-              }`,
-              "postcss-loader",
-            ].join("!"),
-          ),
-          // webpack 2
-          /*
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: "style-loader",
-            loader: [
-              {
-                loader: "css-loader",
-                query: {
-                  modules: true,
-                  localIdentName: (
-                    config.production
-                    ? "[hash:base64:5]"
-                    : "[path][name]--[local]--[hash:base64:5]"
-                  ),
-                },
-              },
-              {
-                loader: "postcss-loader",
-                // query for postcss can't be used right now
-                // https://github.com/postcss/postcss-loader/issues/99
-                // meanwhile, see webpack.LoaderOptionsPlugin in plugins list
-                // query: { plugins: postcssPlugins },
-              },
-            ],
-          }),
-          */
-//        },
-        /*
+        // {
+        //   test: /\.css$/,
+        //   exclude: /\.global\.css$/,
+        //   include: path.resolve(__dirname, "src"),
+        //   // webpack 1
+        //   loader: ExtractTextPlugin.extract(
+        //     "style-loader",
+        //     [ `css-loader?modules&localIdentName=${
+        //       config.production
+        //       ? "[hash:base64:5]"
+        //       : "[path][name]--[local]--[hash:base64:5]"
+        //       }`,
+        //       "postcss-loader",
+        //     ].join("!"),
+        //   ),
+        //   // webpack 2
+        //   /*
+        //   loader: ExtractTextPlugin.extract({
+        //     fallbackLoader: "style-loader",
+        //     loader: [
+        //       {
+        //         loader: "css-loader",
+        //         query: {
+        //           modules: true,
+        //           localIdentName: (
+        //             config.production
+        //             ? "[hash:base64:5]"
+        //             : "[path][name]--[local]--[hash:base64:5]"
+        //           ),
+        //         },
+        //       },
+        //       {
+        //         loader: "postcss-loader",
+        //         // query for postcss can't be used right now
+        //         // https://github.com/postcss/postcss-loader/issues/99
+        //         // meanwhile, see webpack.LoaderOptionsPlugin in plugins list
+        //         // query: { plugins: postcssPlugins },
+        //       },
+        //     ],
+        //   }),
+        //   */
+        // },
         // *.global.css => global (normal) css
-        {
-          test: /\.global\.css$/,
-          include: path.resolve(__dirname, "src"),
-          // webpack 1
-          loader: ExtractTextPlugin.extract(
-            "style-loader",
-            [ "css-loader", "postcss-loader" ].join("!"),
-          ),
-          // webpack 2
-          /*
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: "style-loader",
-            loader: [
-              "css-loader",
-              {
-                loader: "postcss-loader",
-                // query for postcss can't be used right now
-                // https://github.com/postcss/postcss-loader/issues/99
-                // meanwhile, see webpack.LoaderOptionsPlugin in plugins list
-                // query: { plugins: postcssPlugins },
-              },
-            ],
-          }),
-          */
-//        },
+        // {
+        //   test: /\.global\.css$/,
+        //   include: path.resolve(__dirname, "src"),
+        //   // webpack 1
+        //   loader: ExtractTextPlugin.extract(
+        //     "style-loader",
+        //     [ "css-loader", "postcss-loader" ].join("!"),
+        //   ),
+        //   // webpack 2
+        //   /*
+        //   loader: ExtractTextPlugin.extract({
+        //     fallbackLoader: "style-loader",
+        //     loader: [
+        //       "css-loader",
+        //       {
+        //         loader: "postcss-loader",
+        //         // query for postcss can't be used right now
+        //         // https://github.com/postcss/postcss-loader/issues/99
+        //         // meanwhile, see webpack.LoaderOptionsPlugin in plugins list
+        //         // query: { plugins: postcssPlugins },
+        //       },
+        //     ],
+        //   }),
+        //   */
+        // },
         // ! \\
         // If you want global CSS only, just remove the 2 sections above
         // and use the following one
@@ -159,15 +158,17 @@ export default (config = {}) => {
           // depending on your need, you might need to scope node_modules
           // for global CSS if you want to keep CSS Modules by default
           // for your own CSS. If so, uncomment the line below
-          // include: path.resolve(__dirname, "node_modules"),
+          include: path.resolve(__dirname, "src"),
           loader: ExtractTextPlugin.extract(
-            fallbackLoader: "style-loader",
-            loader: [
-             "css-loader",
-             {
-               loader: "postcss-loader!sass-loader",
-               query: { plugins: postcssPlugins },
-             },
+            "style-loader",
+            [
+              "css-loader",
+              // {
+              //   loader: "postcss-loader",
+              //   query: { "plugins": postcssPlugins },
+              // },
+              "sass-loader"
+            ].join("!")
           ),
         },
         // ! \\ if you want to use Sass or LESS, you can add sass-loader or
@@ -198,6 +199,12 @@ export default (config = {}) => {
         },
       ],
     },
+    // sassLoader: {
+    //   includePaths: [
+    //     path.resolve(__dirname, "src"),
+    //     path.resolve(__dirname, "node_modules")
+    //   ]
+    // },
 
     // webpack 1
     postcss: postcssPlugins,

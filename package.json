@@ -1,9 +1,9 @@
 {
   "private": true,
   "name": "phenomium",
-  "homepage": "http://facelesspanda.github.io/",
+  "homepage": "https://theboundlessworld.github.io",
   "twitter": "",
-  "repository": "https://github.com/facelesspanda/phenomium.git",
+  "repository": "https://github.com/facelesspanda/phenomium",
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore --fix .",
     "lint:css": "stylelint \"src/**/*.css\"",
@@ -99,9 +99,9 @@
     "history": "^2.0.0",
     "invariant": "^2.1.1",
     "json-loader": "^0.5.2",
-    "node-sass": "^3.10.0",
+    "node-sass": "^3.10.1",
     "npm-run-all": "^1.7.0",
-    "phenomic": "^0.17.2",
+    "phenomic": "^0.17.4",
     "postcss-browser-reporter": "^0.4.0",
     "postcss-cssnext": "^2.4.0",
     "postcss-loader": "^0.13.0",

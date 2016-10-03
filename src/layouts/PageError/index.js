@@ -1,11 +1,11 @@
 import React, { PropTypes } from "react"
-import styles from "./index.css"
+// import styles from "./index.css"
 
 const PageError = ({ error, errorText }) => (
-  <div className={ styles.container }>
-    <div className={ styles.oops }>{ "😱 Oooops!" }</div>
-    <div className={ styles.text }>
-      <p className={ styles.title }>
+  <div className="container">
+    <div className="oops">{ "😱 Oooops!" }</div>
+    <div className="text">
+      <p className="title">
         <strong>{ error }</strong>
         { " " }
         { errorText }

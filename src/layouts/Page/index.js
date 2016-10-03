@@ -3,7 +3,7 @@ import Helmet from "react-helmet"
 import invariant from "invariant"
 import { BodyContainer, joinUri } from "phenomic"
 
-import styles from "./index.css"
+// import styles from "./index.css"
 
 const Page = (
   {
@@ -49,10 +49,10 @@ const Page = (
       />
       {
         head.title &&
-        <h1>{ head.title }</h1>
+        <h1 className="heading">{ head.title }</h1>
       }
       { header }
-      <BodyContainer>{ body }</BodyContainer> // TODO:0 use your own container issue:1
+      <BodyContainer>{ body }</BodyContainer>
       { children }
       { footer }
     </div>
