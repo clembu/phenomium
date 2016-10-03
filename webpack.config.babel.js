@@ -159,17 +159,17 @@ export default (config = {}) => {
           // for global CSS if you want to keep CSS Modules by default
           // for your own CSS. If so, uncomment the line below
           // include: path.resolve(__dirname, "node_modules"),
-          loader: ExtractTextPlugin.extract({
-            fallbackLoader: "style-loader",
-            loader: [
+          loader: ExxtractTextPlugin.extract(
+            "style-loader",
+            [
               "css-loader",
               {
                 loader: "postcss-loader",
                 query: { "plugins": postcssPlugins },
               },
               "sass-loader"
-            ]
-          }),
+            ].join("!")
+          ),
         },
         // ! \\ if you want to use Sass or LESS, you can add sass-loader or
         // less-loader after postcss-loader (or replacing it).
