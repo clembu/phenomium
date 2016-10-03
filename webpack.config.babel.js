@@ -10,7 +10,7 @@ import pkg from "./package.json"
 
 export default (config = {}) => {
   const postcssPlugins = () => [
-    require("stylelint")(),
+    // require("stylelint")(),
     require("postcss-cssnext")({
       browsers: "last 2 versions",
       features: {
@@ -163,10 +163,7 @@ export default (config = {}) => {
             "style-loader",
             [
               "css-loader",
-              // {
-              //   loader: "postcss-loader",
-              //   query: { "plugins": postcssPlugins },
-              // },
+              "postcss-loader",
               "sass-loader"
             ].join("!")
           ),
